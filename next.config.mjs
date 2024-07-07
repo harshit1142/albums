@@ -1,4 +1,9 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {};
+import withTM from 'next-transpile-modules';
 
-export default nextConfig;
+const withTranspileModules = withTM(['@shadcn/ui']);
+
+const nextConfig = {
+    reactStrictMode: true,
+};
+
+export default withTranspileModules(nextConfig);
